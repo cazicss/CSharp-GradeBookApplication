@@ -43,6 +43,7 @@ namespace GradeBook.UserInterfaces
 
             BaseGradeBook gradeBook;
 
+            /*
             switch (type)
             {
                 case "standard":
@@ -54,6 +55,15 @@ namespace GradeBook.UserInterfaces
                 default:
                     Console.WriteLine("`{0}` is not a supported gradebook type.", type);
                     return;
+            }
+            */
+
+            if(type == "standard") gradeBook = new StandardGradeBook(name);
+            else if (type == "ranked") gradeBook = new RankedGradeBook(name);
+            else
+            {
+                Console.WriteLine("`{0}` is not a supported gradebook type.", type);
+                return;
             }
 
             Console.WriteLine("Created gradebook {0}.", name);
